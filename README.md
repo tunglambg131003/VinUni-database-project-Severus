@@ -72,8 +72,6 @@ This project involves the development of a full-stack social networking web appl
 | 🧪 Final Testing & Bug Fixing           | May 26–28         | Final QA, performance tuning, and fixes |
 | 📝 Documentation & Submission           | May 29–30         | Complete README, code comments, and handover |
 
----
-
 ## Acknowledgement
 
 This project is conducted as part of COMP3030-Database & Database Systems course at our university. We would like to express our heartfelt appreciation to our course instructor and teaching assistants for their guidance, insightful feedback, and continued support throughout the development of this project.
