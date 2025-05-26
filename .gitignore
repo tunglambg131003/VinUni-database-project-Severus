@@ -1,0 +1,103 @@
+# ---------------------
+# Node.js
+# ---------------------
+.next/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# ---------------------
+# Environment variables
+# ---------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------
+# Logs
+# ---------------------
+logs/
+*.log
+*.log.*
+
+# ---------------------
+# Build outputs
+# ---------------------
+dist/
+build/
+out/
+coverage/
+.temp/
+tmp/
+
+# ---------------------
+# OS / System files
+# ---------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ---------------------
+# IDEs and editors
+# ---------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ---------------------
+# Python
+# ---------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.pyd
+*.pyo
+
+# ---------------------
+# Java
+# ---------------------
+*.class
+*.jar
+*.war
+*.ear
+
+# ---------------------
+# C/C++
+# ---------------------
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+
+# ---------------------
+# TypeScript
+# ---------------------
+*.tsbuildinfo
+
+# ---------------------
+# Backup and temp files
+# ---------------------
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# ---------------------
+# Misc
+# --------------
