@@ -12,6 +12,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "vinuni.edu.vn",
+      },
+      {
+        protocol: "https",
         hostname: "img.clerk.com",
       },
       {

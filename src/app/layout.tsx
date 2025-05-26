@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lama Dev Social Media App",
+  title: "SEVERUS APP",
   description: "Social media app built with Next.js",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
           <div className="w-full bg-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
             <Navbar />
           </div>
-          <div className="bg-slate-100 min-h-screen px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 pb-8"          >
+          <div className="bg-slate-100 min-h-screen px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 pb-8">
             {children}
           </div>
         </body>

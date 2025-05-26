@@ -15,7 +15,7 @@ const ProfileCard = async () => {
     include: {
       _count: {
         select: {
-          followers: true,
+          followings: true,
         },
       },
     },
@@ -48,34 +48,34 @@ const ProfileCard = async () => {
         </span>
         <div className="flex items-center gap-4">
           <div className="flex">
-            <Image
-              src="https://images.pexels.com/photos/19578755/pexels-photo-19578755/free-photo-of-woman-watching-birds-and-landscape.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-              alt=""
-              width={12}
-              height={12}
-              className="rounded-full object-cover w-3 h-3"
-            />
-            <Image
-              src="https://images.pexels.com/photos/19578755/pexels-photo-19578755/free-photo-of-woman-watching-birds-and-landscape.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-              alt=""
-              width={12}
-              height={12}
-              className="rounded-full object-cover w-3 h-3"
-            />
-            <Image
-              src="https://images.pexels.com/photos/19578755/pexels-photo-19578755/free-photo-of-woman-watching-birds-and-landscape.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-              alt=""
-              width={12}
-              height={12}
-              className="rounded-full object-cover w-3 h-3"
-            />
+            <svg
+              className="w-5 h-5 text-gray-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+            </svg>
+            <svg
+              className="w-5 h-5 text-gray-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+            </svg>
+            <svg
+              className="w-5 h-5 text-gray-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+            </svg>
           </div>
-          <span className="text-xs text-gray-500">
-            {user._count.followers} Followers
+          <span className="text-xs text-black-100">
+            {user._count.followings} Followers
           </span>
         </div>
         <Link href={`/profile/${user.username}`}>
-          <button className="bg-blue-500 text-white text-xs p-2 rounded-md">
+          <button className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white text-xs px-4 py-2 rounded-md">
             My Profile
           </button>
         </Link>

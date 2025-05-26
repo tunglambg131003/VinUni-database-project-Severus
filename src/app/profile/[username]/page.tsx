@@ -1,11 +1,10 @@
-
 import Feed from "@/components/feed/Feed";
 import LeftMenu from "@/components/leftMenu/LeftMenu";
 import RightMenu from "@/components/rightMenu/RightMenu";
 import prisma from "@/lib/client";
 import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import NotFound from "@/components/NotFound";
 
 const ProfilePage = async ({ params }: { params: { username: string } }) => {
   const username = params.username;
@@ -25,7 +24,7 @@ const ProfilePage = async ({ params }: { params: { username: string } }) => {
     },
   });
 
-  if (!user) return notFound();
+  if (!user) return NotFound();
 
   const { userId: currentUserId } = auth();
 
@@ -44,7 +43,7 @@ const ProfilePage = async ({ params }: { params: { username: string } }) => {
     isBlocked = false;
   }
 
-  if (isBlocked) return notFound();
+  if (isBlocked) return NotFound();
 
   return (
     <div className="flex gap-6 pt-6">
@@ -80,16 +79,16 @@ const ProfilePage = async ({ params }: { params: { username: string } }) => {
                 <span className="text-sm">Posts</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-medium">{user._count.followers}</span>
+                <span className="font-medium">{user._count.followings}</span>
                 <span className="text-sm">Followers</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="font-medium">{user._count.followings}</span>
+                <span className="font-medium">{user._count.followers}</span>
                 <span className="text-sm">Following</span>
               </div>
             </div>
           </div>
-          <Feed username={user.username}/>
+          <Feed username={user.username} />
         </div>
       </div>
       <div className="hidden lg:block w-[30%]">

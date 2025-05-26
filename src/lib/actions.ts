@@ -77,6 +77,21 @@ export const switchBlock = async (userId: string) => {
         },
       });
     } else {
+      await prisma.follower.deleteMany({
+        where: {
+          followerId: currentUserId,
+          followingId: userId,
+        },
+      });
+
+      // Delete where the other user follows current user
+      await prisma.follower.deleteMany({
+        where: {
+          followerId: userId,
+          followingId: currentUserId,
+        },
+      });
+
       await prisma.block.create({
         data: {
           blockerId: currentUserId,
@@ -252,7 +267,11 @@ export const addComment = async (postId: number, desc: string) => {
       },
     });
 
-    return createdComment;
+    return {
+      ...createdComment,
+      likesCount: 0,
+      likedByCurrentUser: false,
+    };
   } catch (err) {
     console.log(err);
     throw new Error("Something went wrong!");
@@ -338,8 +357,41 @@ export const deletePost = async (postId: number) => {
         userId,
       },
     });
-    revalidatePath("/")
+    revalidatePath("/");
   } catch (err) {
     console.log(err);
+  }
+};
+
+export const switchCommentLike = async (commentId: number) => {
+  const { userId } = auth();
+
+  if (!userId) throw new Error("User is not authenticated!");
+
+  try {
+    const existingLike = await prisma.like.findFirst({
+      where: {
+        commentId,
+        userId,
+      },
+    });
+
+    if (existingLike) {
+      await prisma.like.delete({
+        where: {
+          id: existingLike.id,
+        },
+      });
+    } else {
+      await prisma.like.create({
+        data: {
+          commentId,
+          userId,
+        },
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    throw new Error("Something went wrong");
   }
 };

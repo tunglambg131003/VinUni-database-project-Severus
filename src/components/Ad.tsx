@@ -18,7 +18,7 @@ const Ad = ({ size }: { size: "sm" | "md" | "lg" }) => {
           }`}
         >
           <Image
-            src="https://images.pexels.com/photos/23193135/pexels-photo-23193135.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+            src="https://vinuni.edu.vn/wp-content/uploads/2024/03/excel-2-2-e1713237797743.jpg"
             alt=""
             fill
             className="rounded-lg object-cover"
@@ -26,24 +26,29 @@ const Ad = ({ size }: { size: "sm" | "md" | "lg" }) => {
         </div>
         <div className="flex items-center gap-4">
           <Image
-            src="https://images.pexels.com/photos/23193135/pexels-photo-23193135.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+            src="/logo.png"
             alt=""
             width={24}
             height={24}
             className="rounded-full w-6 h-6 object-cover"
           />
-          <span className="text-blue-500 font-medium">BigChef Lounge</span>
+          <span className="text-black font-medium">VinUniversity</span>
         </div>
         <p className={size === "sm" ? "text-xs" : "text-sm"}>
           {size === "sm"
-            ? "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            ? "VinUniversity is a private, not-for-profit university established by Vingroup – the largest private conglomerate in Vietnam."
             : size === "md"
-            ? "Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet consectetur adipisicing elit."
-            : "Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet consectetur adipisicing elit."}
+            ? "VinUniversity is a private, not-for-profit university established by Vingroup – the largest private conglomerate in Vietnam. VinUni aspires to become a university of excellence with a mission to develop talents for the future."
+            : "VinUniversity is a private, not-for-profit university established by Vingroup – the largest private conglomerate in Vietnam. VinUni aspires to become a university of excellence with a mission to develop talents for the future."}
         </p>
-        <button className="bg-gray-200 text-gray-500 p-2 text-xs rounded-lg">
+        <a
+          href="https://vinuni.edu.vn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center  bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white text-xs p-2 rounded-lg"
+        >
           Learn more
-        </button>
+        </a>
       </div>
     </div>
   );

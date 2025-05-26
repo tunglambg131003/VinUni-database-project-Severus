@@ -49,7 +49,7 @@ const UpdateUser = ({ user }: { user: User }) => {
   return (
     <div>
       <span
-        className="text-blue-500 text-xs cursor-pointer"
+        className="text-black text-xs cursor-pointer"
         onClick={() => setOpen(true)}
       >
         Update

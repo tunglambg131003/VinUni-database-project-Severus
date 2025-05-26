@@ -53,9 +53,9 @@ const UserInfoCard = async ({ user }: { user: User }) => {
       <div className="flex justify-between items-center font-medium">
         <span className="text-gray-500">User Information</span>
         {currentUserId === user.id ? (
-          <UpdateUser user={user}/>
+          <UpdateUser user={user} />
         ) : (
-          <Link href="/" className="text-blue-500 text-xs">
+          <Link href="/" className="text-black text-xs">
             See all
           </Link>
         )}
@@ -84,7 +84,7 @@ const UserInfoCard = async ({ user }: { user: User }) => {
           <div className="flex items-center gap-2">
             <Image src="/school.png" alt="" width={16} height={16} />
             <span>
-              Went to <b>{user.school}</b>
+              Studied at <b>{user.school}</b>
             </span>
           </div>
         )}
@@ -100,7 +100,7 @@ const UserInfoCard = async ({ user }: { user: User }) => {
           {user.website && (
             <div className="flex gap-1 items-center">
               <Image src="/link.png" alt="" width={16} height={16} />
-              <Link href={user.website} className="text-blue-500 font-medium">
+              <Link href={user.website} className="text-black font-medium">
                 {user.website}
               </Link>
             </div>

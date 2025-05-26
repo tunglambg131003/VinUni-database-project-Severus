@@ -7,7 +7,7 @@ const UpdateButton = () => {
 
   return (
     <button
-      className="bg-blue-500 p-2 mt-2 rounded-md text-white disabled:bg-opacity-50 disabled:cursor-not-allowed"
+      className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white text-xs p-2 mt-2 rounded-md disabled:bg-opacity-50 disabled:cursor-not-allowed"
       disabled={pending}
     >
       {pending ? "Updating..." : "Update"}

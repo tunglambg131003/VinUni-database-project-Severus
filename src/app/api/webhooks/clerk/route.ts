@@ -43,7 +43,6 @@ export async function POST(req: Request) {
     });
   }
 
-  const { id } = evt.data;
   const eventType = evt.type;
 
   if (eventType === "user.created") {
@@ -54,6 +53,8 @@ export async function POST(req: Request) {
           username: JSON.parse(body).data.username,
           avatar: JSON.parse(body).data.image_url || "/noAvatar.png",
           cover: "/noCover.png",
+          email: JSON.parse(body).data.email_addresses[0].email_address || "",
+          password: "Stored in Clerk",
         },
       });
       return new Response("User has been created!", { status: 200 });

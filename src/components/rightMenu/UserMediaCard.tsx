@@ -8,7 +8,7 @@ const UserMediaCard = async ({ user }: { user: User }) => {
     where: {
       userId: user.id,
       img: {
-        not: null,
+        not: "",
       },
     },
     take: 8,
@@ -22,7 +22,7 @@ const UserMediaCard = async ({ user }: { user: User }) => {
       {/* TOP */}
       <div className="flex justify-between items-center font-medium">
         <span className="text-gray-500">User Media</span>
-        <Link href="/" className="text-blue-500 text-xs">
+        <Link href="/" className="text-black text-xs">
           See all
         </Link>
       </div>
