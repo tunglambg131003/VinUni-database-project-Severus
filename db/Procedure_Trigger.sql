@@ -8,12 +8,8 @@ CREATE PROCEDURE FollowUser(
     IN p_receiverId VARCHAR(191)
 )
 BEGIN
-    IF NOT EXISTS (
-        SELECT 1 FROM Block WHERE (blockerId = p_receiverId AND blockedId = p_senderId)
-    ) THEN
-        INSERT IGNORE INTO FollowRequest(senderId, receiverId) 
-        VALUES (p_senderId, p_receiverId);
-    END IF;
+	INSERT IGNORE INTO FollowRequest(senderId, receiverId) 
+	VALUES (p_senderId, p_receiverId);
 END $$
 
 DELIMITER ;
