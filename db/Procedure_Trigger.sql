@@ -25,6 +25,10 @@ BEGIN
   DELETE FROM Follower
   WHERE (followerId = blockerId AND followingId = blockedId)
      OR (followerId = blockedId AND followingId = blockerId);
+     
+  DELETE FROM FollowRequest
+  WHERE (senderId = blockerId AND receiverId = blockedId)
+     OR (senderId = blockedId AND receiverId = blockerId);
 
   INSERT IGNORE INTO Block(blockerId, blockedId)
   VALUES (blockerId, blockedId);
