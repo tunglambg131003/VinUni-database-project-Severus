@@ -40,35 +40,41 @@ export default function CommentList({ comments, postId }: Props) {
       : false;
     acc[c.id] = { likeCount: c.likes.length, isLiked: liked };
     return acc;
-  }, {} as Record<number, { likeCount: number; isLiked: boolean }>);
+  }, {} as LikeStateMap);
 
   const [likeState, setLikeState] = useState<LikeStateMap>(initialLikeStates);
 
   const likeAction = async (commentId: number) => {
-    // Optimistic update
-    setLikeState((state) => ({
-      ...state,
-      [commentId]: {
-        likeCount: state[commentId].isLiked
-          ? state[commentId].likeCount - 1
-          : state[commentId].likeCount + 1,
-        isLiked: !state[commentId].isLiked,
-      },
-    }));
+    // Optimistic update with default guard
+    setLikeState((state) => {
+      const current = state[commentId] ?? { likeCount: 0, isLiked: false };
+      return {
+        ...state,
+        [commentId]: {
+          likeCount: current.isLiked
+            ? current.likeCount - 1
+            : current.likeCount + 1,
+          isLiked: !current.isLiked,
+        },
+      };
+    });
 
     try {
       await switchCommentLike(commentId);
     } catch (err) {
       // Revert on error
-      setLikeState((state) => ({
-        ...state,
-        [commentId]: {
-          likeCount: state[commentId].isLiked
-            ? state[commentId].likeCount - 1
-            : state[commentId].likeCount + 1,
-          isLiked: !state[commentId].isLiked,
-        },
-      }));
+      setLikeState((state) => {
+        const current = state[commentId]!;
+        return {
+          ...state,
+          [commentId]: {
+            likeCount: current.isLiked
+              ? current.likeCount - 1
+              : current.likeCount + 1,
+            isLiked: !current.isLiked,
+          },
+        };
+      });
     }
   };
 
@@ -101,6 +107,11 @@ export default function CommentList({ comments, postId }: Props) {
     };
 
     addOptimisticComment(newComment);
+    // ensure likeState initialized for temp comment
+    setLikeState(prev => ({
+      ...prev,
+      [tempId]: { likeCount: 0, isLiked: false },
+    }));
 
     try {
       const createdComment = await addComment(postId, desc);
@@ -162,11 +173,11 @@ export default function CommentList({ comments, postId }: Props) {
               <div className="flex items-center gap-8 text-xs text-gray-500 mt-2">
                 <div
                   className="flex items-center gap-2 cursor-pointer"
-                  onClick={() => likeAction(comment.id)}
+                  onClick={() => likeAction(comment.id as number)}
                 >
                   <Image
                     src={
-                      likeState[comment.id]?.isLiked
+                      likeState[comment.id as number]?.isLiked
                         ? "/liked.png"
                         : "/like.png"
                     }
@@ -175,7 +186,7 @@ export default function CommentList({ comments, postId }: Props) {
                     height={12}
                     className="w-4 h-4"
                   />
-                  <span>{likeState[comment.id]?.likeCount || 0} Likes</span>
+                  <span>{likeState[comment.id as number]?.likeCount || 0} Likes</span>
                 </div>
                 <div className="cursor-pointer">Reply</div>
               </div>
