@@ -81,7 +81,7 @@ This project involves the development of a full-stack social networking web appl
 git clone https://github.com/yourusername/social-network-platform.git
 ```
 
-### 2. Set Up Clerk
+### 2. Set Up Clerk & Cloudinary
 
 Go to the [Clerk Dashboard](https://dashboard.clerk.com) & [Cloudinary](https://dashboard.clerk.com) and create a new application.
 
