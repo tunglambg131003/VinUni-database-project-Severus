@@ -78,7 +78,7 @@ This project involves the development of a full-stack social networking web appl
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/yourusername/social-network-platform.git](https://github.com/tunglambg131003/VinUni-database-project-Severus)
+git clone https://github.com/yourusername/social-network-platform.git
 ```
 
 ### 2. Set Up Clerk
