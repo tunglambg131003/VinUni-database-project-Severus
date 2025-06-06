@@ -83,7 +83,7 @@ git clone [https://github.com/yourusername/social-network-platform.git](https://
 
 ### 2. Set Up Clerk
 
-Go to the [Clerk Dashboard](https://dashboard.clerk.com) & [Cloudinary](https://dashboard.clerk.com)](https://cloudinary.com/) and create a new application.
+Go to the [Clerk Dashboard](https://dashboard.clerk.com) & [Cloudinary](https://dashboard.clerk.com) and create a new application.
 
 Copy your **Frontend API**, **Publishable Key**, and **Secret Key**.
 
