@@ -95,7 +95,11 @@ Create a `.env` file in the root directory:
 cp .env.example .env
 ```
 
-### 4. Set Up the Database
+### 4. Install Dependencies
+```bash
+npm install
+```
+### 5. Set Up the Database
 
 You have two options to set up your local database:
 
@@ -109,12 +113,7 @@ npx prisma db push
 
 #### Option 2: Use SQL Files (Manual)
 
-You can also create the local database manually using the SQL files located in the db/ directory:
-
-### 5. Install Dependencies
-```bash
-npm install
-```
+You can also create the local database manually using the SQL files located in the db/ directory.
 
 ### 6. Run the Development Server
 
