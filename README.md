@@ -72,6 +72,38 @@ This project involves the development of a full-stack social networking web appl
 | 🧪 Final Testing & Bug Fixing           | May 26–28         | Final QA, performance tuning, and fixes |
 | 📝 Documentation & Submission           | May 29–30         | Complete README, code comments, and handover |
 
+
+## 🛠️ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone [https://github.com/yourusername/social-network-platform.git](https://github.com/tunglambg131003/VinUni-database-project-Severus)
+
+### 2. Set Up Clerk
+
+Go to the [Clerk Dashboard](https://dashboard.clerk.com) & [Cloudinary](https://dashboard.clerk.com)](https://cloudinary.com/) and create a new application.
+
+Copy your **Frontend API**, **Publishable Key**, and **Secret Key**.
+
+### 3. Create Environment Variables
+
+Create a `.env` file in the root directory:
+
+```bash
+cp .env.example .env
+
+### 4. Install Dependencies
+```bash
+npm install
+
+### 5. Run the Development Server
+
+```bash
+npm run dev
+
+Open your browser and visit: http://localhost:3000
+
 ## Acknowledgement
 
 This project is conducted as part of COMP3030-Database & Database Systems course at our university. We would like to express our heartfelt appreciation to our course instructor and teaching assistants for their guidance, insightful feedback, and continued support throughout the development of this project.
