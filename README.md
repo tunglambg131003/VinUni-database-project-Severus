@@ -141,4 +141,4 @@ This project is conducted as part of COMP3030-Database & Database Systems course
   *V202100398*  
   Email: [21phuc.bhl@vinuni.edu.vn](mailto:21phuc.bhl@vinuni.edu.vn)
 
-Feel free to contact us with any questions, suggestions, or comments related to this project. We welcome any feedback that can help improve this work or contribute to further research in the domain of music data analysis and visualization.
+Feel free to contact us with any questions, suggestions, or comments related to this project. We welcome any feedback that can help improve this work or contribute to further research. 
