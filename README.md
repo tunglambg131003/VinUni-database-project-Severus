@@ -79,6 +79,7 @@ This project involves the development of a full-stack social networking web appl
 
 ```bash
 git clone [https://github.com/yourusername/social-network-platform.git](https://github.com/tunglambg131003/VinUni-database-project-Severus)
+```
 
 ### 2. Set Up Clerk
 
@@ -92,15 +93,18 @@ Create a `.env` file in the root directory:
 
 ```bash
 cp .env.example .env
+```
 
 ### 4. Install Dependencies
 ```bash
 npm install
+```
 
 ### 5. Run the Development Server
 
 ```bash
 npm run dev
+```
 
 Open your browser and visit: http://localhost:3000
 
